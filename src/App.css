@@ -1,0 +1,179 @@
+/* 全体の基本スタイル */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+  background: #f4f6f8;
+  color: #1f2933;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 40vh;
+  color: #6b7280;
+}
+
+/* ログイン・会員登録画面 */
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 360px;
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.auth-form h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+.auth-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.auth-form input {
+  padding: 10px 12px;
+  border: 1px solid #cbd2d9;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.auth-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: bold;
+}
+
+.message {
+  margin: 0;
+  font-size: 0.85rem;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.message.error {
+  background: #fdecec;
+  color: #c62828;
+}
+
+.message.info {
+  background: #e8f1fd;
+  color: #1d4ed8;
+}
+
+.switch-link {
+  margin: 0;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* 物件一覧画面 */
+.properties-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 0;
+  border-bottom: 1px solid #dde2e7;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-email {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.logout-button {
+  padding: 8px 14px;
+  border: 1px solid #cbd2d9;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.count {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.property-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+.property-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.property-name {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+.property-rent {
+  margin: 0 0 6px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.property-area {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
