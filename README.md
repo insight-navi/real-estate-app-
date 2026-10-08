@@ -5,7 +5,8 @@ Supabase 認証付きの不動産管理 Web アプリ（React + Vite）。
 ## 機能
 
 - メールアドレス＋パスワードで会員登録・ログイン
-- ログイン後は物件一覧（物件名・家賃・エリアのカード表示、ダミーデータ）
+- 物件の一覧表示・新規登録・編集・削除（物件名・家賃・エリア・間取り）
+- 自分が登録した物件だけが見える（Supabase の RLS で制御）
 - 未ログインで物件一覧を開くとログイン画面へリダイレクト
 - ログアウト
 
@@ -22,6 +23,13 @@ npm run dev            # http://localhost:5173
 
 ## Supabase 側の設定
 
+### テーブルの作成
+
+Supabase のダッシュボードで「SQL Editor」を開き、`supabase/schema.sql` の中身を貼り付けて実行する。
+物件テーブル `properties` と、RLS のポリシー（自分の物件のみ表示・登録・編集・削除できる）が作られる。何度実行しても問題ない。
+
+### 確認メール
+
 - 会員登録時の確認メールは、Supabase の「Authentication → Sign In / Providers → Email → Confirm email」で切り替えられる
   - 有効: 登録後に届くメールのリンクを開いてからログインする
   - 無効: 登録するとそのままログインして物件一覧に移動する
@@ -32,4 +40,6 @@ npm run dev            # http://localhost:5173
 - `src/contexts/AuthContext.jsx` — ログイン状態の管理
 - `src/components/ProtectedRoute.jsx` — 未ログイン時のリダイレクト
 - `src/pages/` — ログイン・会員登録・物件一覧の各画面
-- `src/data/properties.js` — 物件のダミーデータ
+- `src/lib/propertiesApi.js` — 物件の取得・登録・更新・削除（Supabase とのやりとり）
+- `src/components/PropertyForm.jsx` — 物件の登録・編集フォーム
+- `supabase/schema.sql` — テーブル・RLS ポリシーを作る SQL

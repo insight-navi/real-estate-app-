@@ -177,3 +177,94 @@ button:disabled {
   color: #6b7280;
   font-size: 0.9rem;
 }
+
+.property-layout {
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #eef2f7;
+  color: #374151;
+  font-size: 0.8rem;
+}
+
+.empty {
+  color: #6b7280;
+}
+
+/* ボタン共通 */
+.primary-button,
+.secondary-button,
+.danger-button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.primary-button {
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-weight: bold;
+}
+
+.secondary-button {
+  border: 1px solid #cbd2d9;
+  background: #fff;
+  color: #1f2933;
+}
+
+.danger-button {
+  border: 1px solid #f3c4c4;
+  background: #fff;
+  color: #c62828;
+}
+
+.card-actions,
+.form-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* 新規登録エリア */
+.create-section {
+  margin: 20px 0 8px;
+}
+
+.create-panel {
+  max-width: 480px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.create-panel h2 {
+  margin: 0 0 12px;
+  font-size: 1.1rem;
+}
+
+/* 物件の登録・編集フォーム */
+.property-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.property-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.property-form input {
+  padding: 8px 10px;
+  border: 1px solid #cbd2d9;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.property-form .form-actions {
+  margin-top: 4px;
+}
