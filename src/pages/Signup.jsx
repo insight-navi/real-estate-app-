@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabaseClient'
 
-// Supabase の既定のパスワード最低文字数
-const MIN_PASSWORD_LENGTH = 6
+// パスワードの最低文字数（Supabase の「Minimum password length」と合わせる）
+const MIN_PASSWORD_LENGTH = 8
 
 // 会員登録画面
 export default function Signup() {
@@ -25,7 +25,12 @@ export default function Signup() {
     }
 
     setSubmitting(true)
-    const { data, error } = await supabase.auth.signUp({ email, password })
+    const { data, error } = await supabase.auth.signUp({
+      email,
+      password,
+      // 確認メールのリンクを開いたら、今開いているアプリ（ローカル or 公開先）の物件一覧に戻す
+      options: { emailRedirectTo: `${window.location.origin}/properties` },
+    })
     setSubmitting(false)
 
     if (error) {

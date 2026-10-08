@@ -28,11 +28,15 @@ npm run dev            # http://localhost:5173
 Supabase のダッシュボードで「SQL Editor」を開き、`supabase/schema.sql` の中身を貼り付けて実行する。
 物件テーブル `properties` と、RLS のポリシー（自分の物件のみ表示・登録・編集・削除できる）が作られる。何度実行しても問題ない。
 
-### 確認メール
+### 認証の設定（Authentication）
 
-- 会員登録時の確認メールは、Supabase の「Authentication → Sign In / Providers → Email → Confirm email」で切り替えられる
-  - 有効: 登録後に届くメールのリンクを開いてからログインする
-  - 無効: 登録するとそのままログインして物件一覧に移動する
+- Sign In / Providers → User Signups → **Confirm email** はオンにする
+  - オンだと、登録済みのアドレスで会員登録しても「確認メールを送信しました」と同じ表示になり、アドレスが登録済みかどうかを外から判別できない
+  - 登録後に届くメールのリンクを開くと、アプリの物件一覧に戻ってログイン状態になる
+- Sign In / Providers → Email → **Minimum password length** は 8（アプリの入力チェック `MIN_PASSWORD_LENGTH` と合わせる）
+- URL Configuration
+  - Site URL: 公開先の URL（例: `https://real-estate-app-65rc.vercel.app`）
+  - Redirect URLs: 公開先とローカルの両方を登録する（`https://real-estate-app-65rc.vercel.app/**` と `http://localhost:5173/**`）
 
 ## ディレクトリ構成
 
